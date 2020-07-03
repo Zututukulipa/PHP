@@ -62,5 +62,5 @@ if (!empty($_POST)) {
         }
     }
 }
-//    header('Location: http://localhost/editHotel.php?hotelId=' . $_POST['hotelId']);
+    header('Location: http://localhost/editHotel.php?hotelId=' . $_POST['hotelId']);
     exit;

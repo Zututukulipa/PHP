@@ -116,7 +116,7 @@ if(!empty($_POST)) {
     }
 }
 
-$target_dir = "uploads/";
+$target_dir = "../../uploads/";
 if(!empty($_FILES["fileToUpload"]["name"])) {
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -126,7 +126,6 @@ if(!empty($_FILES["fileToUpload"]["name"])) {
         if ($check !== false) {
             $uploadOk = 1;
         } else {
-            echo "check ERROR";
             $uploadOk = 0;
         }
     }
@@ -137,16 +136,18 @@ if(!empty($_FILES["fileToUpload"]["name"])) {
         && $imageFileType != "gif") {
         $uploadOk = 0;
     }
-    if ($uploadOk == 0) {
-        echo "\n" . $target_file . "\nError during upload(wrong file format?).\n" . $_FILES["fileToUpload"]["error"];
-    } else {
-        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    }
-    if ($uploadOk > 0) {
-        echo $target_file;
-        $stmt = $conn->prepare("UPDATE Hotel SET groundPlanPath=:groundPlanPath WHERE idHotel=:hotelId");
-        $stmt->bindParam(':groundPlanPath', $target_file);
-        $stmt->bindParam(':hotelId', $hotelId);
-        $stmt->execute();
+    if ($uploadOk != 0) {
+        {
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+        }
+        if ($uploadOk > 0) {
+            echo $target_file;
+            $stmt = $conn->prepare("UPDATE Hotel SET groundPlanPath=:groundPlanPath WHERE idHotel=:hotelId");
+            $stmt->bindParam(':groundPlanPath', $target_file);
+            $stmt->bindParam(':hotelId', $hotelId);
+            $stmt->execute();
+        }
     }
 }
+header('Location: http://localhost/hotelAdministration.php');
+
