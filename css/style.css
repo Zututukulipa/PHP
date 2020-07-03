@@ -1,0 +1,542 @@
+.section {
+	position: relative;
+}
+
+.section .section-center {
+	position: absolute;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#booking {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.booking-form {
+	padding: 0 40px 40px;
+	margin: auto;
+	background: #2d343b;
+}
+
+.booking-form .form-header {
+	padding: 40px;
+	margin: 0px -40px 0px;
+	background: #222831;
+}
+
+.booking-form .form-header h1 {
+	font-weight: 700;
+	text-transform: capitalize;
+	font-size: 38px;
+	margin: 0;
+	color: #fff;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+	background-color: #1c2126;
+	height: 50px;
+	padding: 7px 15px 0px;
+	border: none;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 24px;
+	text-align: center;
+	pointer-events: none;
+	height: 50px;
+	line-height: 50px;
+	color: #2d343b;
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	position: absolute;
+	top: 15px;
+	left: 20px;
+	text-transform: uppercase;
+	color: #2d343b;
+	font-weight: 700;
+	line-height: 24px;
+	height: 24px;
+	font-size: 16px;
+	pointer-events: none;
+	-webkit-transition: 0.5s all;
+	transition: 0.5s all;
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+	top: -10px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.booking-form .form-group:not( .input-not-empty) .form-control:not( :focus) {
+	color: transparent;
+}
+
+.booking-form .form-group .form-control:focus+.form-label {
+	top: -10px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.booking-form .form-checkbox input {
+	position: absolute !important;
+	margin-left: -9999px !important;
+	visibility: hidden !important;
+}
+
+.booking-form .form-checkbox label {
+	position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.booking-form .form-checkbox label+label {
+	margin-left: 15px;
+}
+
+.booking-form .form-checkbox input+span {
+	position: absolute;
+	left: 2px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #1c2126;
+	background: #1c2126;
+	border-radius: 50%;
+}
+
+.booking-form .form-checkbox input:checked+span {
+	border-color: #d65a31;
+}
+
+.booking-form .form-checkbox input+span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: #d65a31;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
+
+.booking-form .form-checkbox input:not(:checked)+span:after {
+	opacity: 0;
+}
+
+.booking-form .form-checkbox input:checked+span:after {
+	opacity: 1;
+	width: 10px;
+	height: 10px;
+}
+
+.booking-form .submit-btn {
+	color: #1c2126;
+	background-color: #d65a31;
+	margin-left: 5px;
+	font-weight: 700;
+	height: 50px;
+	width: 350px;
+	border: none;
+	padding: 0px 25px;
+}
+
+.submit-btn:disabled{
+	background-color: #1c2126;
+	color: #999999;
+}
+
+.add-btn{
+	color: #1c2126;
+	background-color: #d65a31;
+	margin-left: 5px;
+	font-weight: 700;
+	height: 50px;
+	width: 150px;
+	float: right;
+	border: none;
+	padding: 0px 25px;
+}
+article {
+	columns: 2 50px;
+}
+
+p {
+	margin-bottom: 1.3em;
+}
+
+h1, h2, h3, h4 {
+	margin: 1.414em 0 0.5em;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+@media print {
+	.topnav, .submit-btn, .btn{
+		visibility: hidden;
+	}
+
+}
+
+input[type="text"],input[type="number"],input[type="password"] textarea {
+	color: #dddddd;
+	background-color : #1c2126;
+}
+input:focus,
+input:active,
+input::inactive-selection{
+	border-color: transparent;
+	border-bottom: 4px solid #d65a31;
+}
+
+input:required{
+	border-color: transparent;
+	background-color: #1c2126;
+	color: #dddddd;
+	border-bottom: 4px solid #e03300;
+}
+
+
+input.invalid {
+	border-left: 4px solid #FF0000;
+	border-bottom: transparent;
+	background-color: #1c2126;
+	color: #dddddd;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+
+	background-color: #1a1f24;
+	overflow: hidden;
+}
+
+.noprint {
+	visibility: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #eeeeee;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+
+/* Style the input fields */
+input {
+	padding: 10px;
+	width: 100%;
+	font-size: 17px;
+	font-family: Raleway, serif;
+	border: 1px solid #aaaaaa;
+}
+
+
+/* Hide all steps by default: */
+.tab {
+	display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbbbbb;
+	border: none;
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+	opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+	background-color: #d65a31;
+}
+
+.mainWindow {
+	background: #393e46;
+	color: #eeeeee;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #393e46;
+	color: #eeeeee;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #d65a31;
+	color: white;
+}
+
+.footerDark {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #eeeeee;
+	font-size: 12px;
+}
+
+.column {
+	padding-right: 50px;
+	flex: 50%;
+}
+
+.column-third {
+	padding-right: 50px;
+	flex: 33%;
+}
+
+.column-tiny {
+	padding-right: 50px;
+	flex: 12%;
+}
+
+.column-wider {
+	padding-right: 50px;
+	flex: 30%;
+}
+
+.row {
+	display: flex;
+	padding: 2px;
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+}
+
+div.a div.b {
+	float: left;
+	width: 100px;
+}
+
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+hr {
+	display: block;
+	height: 25px;
+	border: 0;
+	border-top: 1px solid #393e46;
+	margin: 0 0;
+	padding: 0;
+}
+
+
+.container th h1 {
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;
+	color: #2d343b;
+}
+
+.container td {
+	font-weight: normal;
+	font-size: 1em;
+	-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	-moz-box-shadow: 0 2px 2px -2px #0E1119;
+	box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	text-align: left;
+	overflow: hidden;
+	width: 80%;
+	margin: 0 auto;
+	display: table;
+	padding: 0 0 4em 0;
+}
+
+.containerNested {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+.containerNested td, .containerNested th {
+	width: 98%;
+	height: 98%;
+}
+
+.container td, .container th {
+	padding-bottom: 1%;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	background-color: #393e46;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	background-color: #393e46;
+}
+
+.container th {
+	background-color: #1a1f24;
+	color: #dddddd;
+}
+
+.container tr:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	-moz-box-shadow: 0 6px 6px -6px #0E1119;
+	box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+	background-color: #393e46;
+	color: #EEEEEE;
+
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+}
+
+.container button {
+	color: #1c2126;
+	background-color: #d65a31;
+	font-weight: 700;
+	height: 50px;
+	width: 75%;
+	border: none;
+	padding: 0 25px;
+}
+
+.container button:disabled {
+	background-color: #464A52;
+
+}
+
+@media (max-width: 800px) {
+	.container td:nth-child(4),
+	.container th:nth-child(4) {
+		display: none;
+	}
+}
+
+.check{
+	float: right;
+}
+
+.booking-layout{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+.booking-btns{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+
+
+body {
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: #ADABAB;
+}
+
+button{
+	width: 265px;
+	margin-bottom: 20px;
+	height: 45px;
+}
+
+header{
+	height: 300px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+main{
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+}
+
+footer {
+	background-color: #D7D7D7;
+	border-radius: 5px;
+	clear: both;
+	height: 150px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+img{
+	border-radius: 2%;
+}
+
+footer div {
+	float: left;
+	width: 33%;
+	height: 200px;
+}
+
+section{
+	text-align: left;
+}
+
+a{
+	color: #CC3300;
+	align-items: baseline;
+}
