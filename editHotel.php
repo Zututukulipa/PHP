@@ -51,7 +51,6 @@ $rooms = $stmt->fetchAll(PDO::FETCH_OBJ);
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="styles.css"/>
     <script type="text/javascript" src="js/formValidations.js"></script>
 </head>
 
@@ -79,7 +78,7 @@ echo '<form method = "post" action="form_handling/editHotel/deleteHotel.php" nam
         echo '<th>Name</th >';
         echo '<th>Price</th >';
         echo '<th>Capacity</th >';
-        echo '<th>Delete?</th >';
+        echo '<th>Employee</th >';
         echo '</tr >';
         foreach ($rooms as $room) {
             echo '<tr><td><input type="text" value="' . $room->name . '" name="names[]" required/></td>
